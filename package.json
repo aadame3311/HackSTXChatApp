@@ -4,5 +4,17 @@
   "description": "chat app",
   "main": "./server/app.js",
   "author": "aadame",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aadame3311/HackSTXChatApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aadame3311/HackSTXChatApp/issues"
+  },
+  "homepage": "https://github.com/aadame3311/HackSTXChatApp#readme"
 }
