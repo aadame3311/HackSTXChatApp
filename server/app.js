@@ -5,7 +5,7 @@ const app = express();
 const http = require('http').Server(app); 
 
 const hostname = '127.0.0.1';
-const port = 3000; // Ports are where servers listen for information.
+const port = process.env.PORT || 3000; // Ports are where servers listen for information.
 const path = require('path'); // Path module.
 // Add static files on client/ to our path.
 app.use(express.static(path.join(__dirname, '../public')));
