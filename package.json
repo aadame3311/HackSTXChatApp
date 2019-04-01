@@ -1,0 +1,8 @@
+{
+  "name": "hackstx_webdev",
+  "version": "1.0.0",
+  "description": "chat app",
+  "main": "./server/app.js",
+  "author": "aadame",
+  "license": "ISC"
+}
