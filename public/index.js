@@ -1,5 +1,9 @@
 var socket = io();
 
+// Remove notification on click.
+$('body').on('click', ()=> {
+    newMSGNotif(false);
+})
 $('form.message-form').submit((e)=>{
     e.preventDefault();
 
@@ -19,7 +23,15 @@ $('form.message-form').submit((e)=>{
 
 // Do something when client receives a message. 
 socket.on('chat message', (msg)=>{
+    newMSGNotif(true);
+
     // Create new DOM element.
     var new_message = $(`<div class="message-container"><div class="message">[Name]: ${msg}</div></div>`);
     $('.message-box').append(new_message);
 })
+
+// Notify user on tab when new message is received. 
+function newMSGNotif(received) {
+    if (received) $("title").text("New Message!");
+    else $("title").text("Chat!");
+}

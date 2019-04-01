@@ -29,6 +29,7 @@ io.on('connection', (socket)=> {
     console.log('a user connected');
     socket.broadcast.emit('hi');
 
+    // On message receive. 
     socket.on('chat message', (msg) => {
         // Send message to everyone connected to socket. 
         // 'chat message' could be called anything...
