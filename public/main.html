@@ -26,7 +26,14 @@
                 </div>
             </div>
             <div class="input-field">
-                <form class="message-form">
+                <div class="name-input-container">
+                    <div class="name-cont">
+                        <input id ="name-input" type="text" placeholder="Enter Name">
+                        <span hidden id="error-msg">Username already exists.</span>
+                    </div>
+                    <div class="submit-name-button">Enter</div>
+                </div>
+                <form hidden class="message-form">
                     <input id="m" type="text" placeholder="Type a message"></input>
                 </form>
             </div>

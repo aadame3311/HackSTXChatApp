@@ -97,6 +97,36 @@ h1 {
 
     border-radius: 0 0 10px 10px;
 }
+.name-input-container {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+}
+.submit-name-button {
+    background-color: #3C5A99;
+    border-radius: 5px 5px 5px 5px;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+.submit-name-button:hover {
+    background-color:darkblue;
+    cursor: pointer;
+}
+.submit-name-button:active {
+    background-color: lightblue;
+}
+.name-cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+#error-msg {
+    color: red;
+    font-size: 15px;
+}
+
 .input-field input {
     width: 80%;
 

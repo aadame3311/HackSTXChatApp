@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 var server = app.listen(port, ()=>console.log(`Example app listening on port ${port}`));
 const io = require('socket.io').listen(server);
 
+var userList = [];
 
 
 // Routes. 
@@ -36,6 +37,27 @@ io.on('connection', (socket)=> {
         // Here we want to keep the same name as we did when we emit from client.
         socket.broadcast.emit('chat message', msg);
     });
-})
+
+    socket.on('new user', (name) => {
+        // We let the server handle checking for existing usernames.
+        if (userList.indexOf(name) != -1) {
+            // Ask user to enter new name. 
+            console.log('user exists');
+            socket.emit('existing user', 'user already exists');
+            return;
+        }
+        
+        // Otherwise add user and notify sender.
+        userList.push(name);
+        console.log(`UserList:${userList}`);
+        socket.emit('user added', name);
+    });
+
+
+    // Remove username from our list of users when the user disconnects. 
+    socket.on('disconnect', ()=> {
+        // R
+    });
+});
 
 
